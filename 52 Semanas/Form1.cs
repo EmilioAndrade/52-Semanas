@@ -73,12 +73,12 @@ namespace _52_Semanas
                     MessageBox.Show(string.Format("Ocorreu o erro: {0}", error), "Erro ao Gerar Lista", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
-            CriarTxt(linha);
+            //CriarTxt(linha);
         }
 
         private void listViewDetalhes_MouseDoubleClick(object sender, MouseEventArgs e)
         {
-            MessageBox.Show("Deseja atualizar está linha ?", "Atualizar Depósito", MessageBoxButtons.OK, MessageBoxIcon.Question);
+            MessageBox.Show("Deseja atualizar está linha ?", "Atualizar Depósito", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
         }
 
         private void CriarTxt(string linha)
