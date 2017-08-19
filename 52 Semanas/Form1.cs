@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
+using System.IO;
+using System.Text;
 
 namespace _52_Semanas
 {
@@ -31,11 +33,12 @@ namespace _52_Semanas
         private void btnVisualizar_Click(object sender, EventArgs e)
         {
             int semana = 0;
-            decimal saldo = 0;
             decimal valor = 0;
             decimal valorAcumulado = 0;
 
             string[] colunas = new string[4];
+            string linha = string.Empty;
+            listViewDetalhes.Items.Clear();
 
             for (int i = 1; i < 53; i++)
             {
@@ -45,9 +48,10 @@ namespace _52_Semanas
                 {
                     valorAcumulado = valor + numericValor.Value;
                     colunas[1] = string.Format("R$ {0}", valorAcumulado.ToString());
-                    colunas[2] = "Não";
+                    colunas[2] = "Sim";
                     colunas[3] = string.Format("R$ {0}", valorAcumulado.ToString());
                     valor = numericValor.Value;
+                    linha = string.Join(", ", colunas);
                 }
                 else
                 {
@@ -56,6 +60,7 @@ namespace _52_Semanas
                     colunas[2] = "Não";
                     valorAcumulado += valor;
                     colunas[3] = string.Format("R$ {0}", valorAcumulado);
+                    linha = linha + (string.Format("{0}", System.Environment.NewLine) + string.Join(", ", colunas));
                 }
                 try
                 {
@@ -67,14 +72,35 @@ namespace _52_Semanas
                 {
                     MessageBox.Show(string.Format("Ocorreu o erro: {0}", error), "Erro ao Gerar Lista", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
-                
+            }
+            CriarTxt(linha);
+        }
+
+        private void listViewDetalhes_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            MessageBox.Show("Deseja atualizar está linha ?", "Atualizar Depósito", MessageBoxButtons.OK, MessageBoxIcon.Question);
+        }
+
+        private void CriarTxt(string linha)
+        {
+            try
+            {
+                StreamWriter wr = new StreamWriter(@"C:\Users\Emílio Andrade\Documents\Documentos\Emilio");
+                wr.Write(linha);
+                wr.Close();
+                wr.Dispose();
+            }
+            catch (UnauthorizedAccessException)
+            {
+                MessageBox.Show("Não foi possível criar o arquivo no diretório, falha de permissão", "Erro ao Criar o Arquivo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            catch (Exception error)
+            {
+                MessageBox.Show(string.Format("Ocorreu o erro: {0}", error), "Erro ao Criar o Arquivo", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
         }
 
-        private void btnGravar_Click(object sender, EventArgs e)
-        {
 
-        }
     }
 }

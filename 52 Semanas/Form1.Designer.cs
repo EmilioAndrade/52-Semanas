@@ -44,7 +44,6 @@
             this.columnHeaderDeposito = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeaderSaldo = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.numericValor = new System.Windows.Forms.NumericUpDown();
-            this.btnGravar = new System.Windows.Forms.Button();
             this.btnFechar = new System.Windows.Forms.Button();
             this.gBoxPrincipal.SuspendLayout();
             this.groupBoxDetalhes.SuspendLayout();
@@ -100,7 +99,7 @@
             // lblValorTotalDepositado
             // 
             this.lblValorTotalDepositado.AutoSize = true;
-            this.lblValorTotalDepositado.Location = new System.Drawing.Point(355, 320);
+            this.lblValorTotalDepositado.Location = new System.Drawing.Point(371, 320);
             this.lblValorTotalDepositado.Name = "lblValorTotalDepositado";
             this.lblValorTotalDepositado.Size = new System.Drawing.Size(30, 13);
             this.lblValorTotalDepositado.TabIndex = 6;
@@ -109,7 +108,7 @@
             // lblTotalDepositado
             // 
             this.lblTotalDepositado.AutoSize = true;
-            this.lblTotalDepositado.Location = new System.Drawing.Point(257, 320);
+            this.lblTotalDepositado.Location = new System.Drawing.Point(274, 320);
             this.lblTotalDepositado.Name = "lblTotalDepositado";
             this.lblTotalDepositado.Size = new System.Drawing.Size(91, 13);
             this.lblTotalDepositado.TabIndex = 5;
@@ -159,6 +158,7 @@
             this.listViewDetalhes.TabIndex = 2;
             this.listViewDetalhes.UseCompatibleStateImageBehavior = false;
             this.listViewDetalhes.View = System.Windows.Forms.View.Details;
+            this.listViewDetalhes.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.listViewDetalhes_MouseDoubleClick);
             // 
             // columnHeaderSemana
             // 
@@ -203,24 +203,11 @@
             0});
             this.numericValor.ValueChanged += new System.EventHandler(this.numericValor_ValueChanged);
             // 
-            // btnGravar
-            // 
-            this.btnGravar.Image = ((System.Drawing.Image)(resources.GetObject("btnGravar.Image")));
-            this.btnGravar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnGravar.Location = new System.Drawing.Point(101, 384);
-            this.btnGravar.Name = "btnGravar";
-            this.btnGravar.Size = new System.Drawing.Size(75, 23);
-            this.btnGravar.TabIndex = 2;
-            this.btnGravar.Text = "Gravar";
-            this.btnGravar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnGravar.UseVisualStyleBackColor = true;
-            this.btnGravar.Click += new System.EventHandler(this.btnGravar_Click);
-            // 
             // btnFechar
             // 
             this.btnFechar.Image = ((System.Drawing.Image)(resources.GetObject("btnFechar.Image")));
             this.btnFechar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnFechar.Location = new System.Drawing.Point(285, 384);
+            this.btnFechar.Location = new System.Drawing.Point(192, 373);
             this.btnFechar.Name = "btnFechar";
             this.btnFechar.Size = new System.Drawing.Size(75, 23);
             this.btnFechar.TabIndex = 3;
@@ -233,9 +220,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(466, 419);
+            this.ClientSize = new System.Drawing.Size(466, 408);
             this.Controls.Add(this.btnFechar);
-            this.Controls.Add(this.btnGravar);
             this.Controls.Add(this.gBoxPrincipal);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -266,7 +252,6 @@
         private System.Windows.Forms.ColumnHeader columnHeaderValorDeposito;
         private System.Windows.Forms.ColumnHeader columnHeaderDeposito;
         private System.Windows.Forms.ColumnHeader columnHeaderSaldo;
-        private System.Windows.Forms.Button btnGravar;
         private System.Windows.Forms.Button btnFechar;
         private System.Windows.Forms.Label lblGerarLista;
         private System.Windows.Forms.Button btnVisualizar;
