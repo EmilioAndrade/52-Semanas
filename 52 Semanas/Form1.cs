@@ -48,7 +48,7 @@ namespace _52_Semanas
                 {
                     valorAcumulado = valor + numericValor.Value;
                     colunas[1] = string.Format("R$ {0}", valorAcumulado.ToString());
-                    colunas[2] = "Sim";
+                    colunas[2] = "";
                     colunas[3] = string.Format("R$ {0}", valorAcumulado.ToString());
                     valor = numericValor.Value;
                     linha = string.Join(", ", colunas);
@@ -57,7 +57,7 @@ namespace _52_Semanas
                 {
                     valor += numericValor.Value;
                     colunas[1] = string.Format("R$ {0}", valor.ToString());
-                    colunas[2] = "Não";
+                    colunas[2] = "";
                     valorAcumulado += valor;
                     colunas[3] = string.Format("R$ {0}", valorAcumulado);
                     linha = linha + (string.Format("{0}", System.Environment.NewLine) + string.Join(", ", colunas));
