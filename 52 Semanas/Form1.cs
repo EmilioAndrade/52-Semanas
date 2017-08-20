@@ -2,6 +2,7 @@
 using System.Windows.Forms;
 using System.IO;
 using System.Text;
+using System.Drawing;
 
 namespace _52_Semanas
 {
@@ -33,8 +34,11 @@ namespace _52_Semanas
         private void btnVisualizar_Click(object sender, EventArgs e)
         {
             int semana = 0;
+            int cont = 1;
+
             decimal valor = 0;
             decimal valorAcumulado = 0;
+            decimal valorDepositoMensal = 0;
 
             string[] colunas = new string[4];
             string linha = string.Empty;
@@ -51,22 +55,39 @@ namespace _52_Semanas
                     colunas[2] = "Não";
                     colunas[3] = string.Format("R$ {0}", valorAcumulado.ToString());
                     valor = numericValor.Value;
+                    valorDepositoMensal += valor;
                     linha = string.Join(", ", colunas);
+                    cont++;
                 }
                 else
                 {
                     valor += numericValor.Value;
+                    valorDepositoMensal += valor;
                     colunas[1] = string.Format("R$ {0}", valor.ToString());
                     colunas[2] = "Não";
                     valorAcumulado += valor;
                     colunas[3] = string.Format("R$ {0}", valorAcumulado);
                     linha = linha + (string.Format("{0}", System.Environment.NewLine) + string.Join(", ", colunas));
+                    cont++;
                 }
                 try
                 {
                     ListViewItem lstView = new ListViewItem(colunas);
                     listViewDetalhes.Enabled = true;
                     listViewDetalhes.Items.Add(lstView);
+                    if(cont == 5)
+                    {
+                        colunas[0] = "Mês encerrado";
+                        colunas[1] = string.Format("Deposito Mês: R${0}", valorDepositoMensal);
+                        colunas[2] = "*****";
+                        colunas[3] = string.Format("Saldo Mês: R${0}", valorAcumulado);
+                        ListViewItem lstView2 = new ListViewItem(colunas);
+                        lstView2.BackColor = Color.LightGoldenrodYellow;
+                        listViewDetalhes.Items.Add(lstView2);
+
+                        valorDepositoMensal = 0;
+                        cont = 1;
+                    }
                 }
                 catch(Exception error)
                 {

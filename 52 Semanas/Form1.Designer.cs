@@ -73,7 +73,7 @@
             this.gBoxPrincipal.Controls.Add(this.lblValor);
             this.gBoxPrincipal.Location = new System.Drawing.Point(12, 12);
             this.gBoxPrincipal.Name = "gBoxPrincipal";
-            this.gBoxPrincipal.Size = new System.Drawing.Size(442, 347);
+            this.gBoxPrincipal.Size = new System.Drawing.Size(466, 565);
             this.gBoxPrincipal.TabIndex = 1;
             this.gBoxPrincipal.TabStop = false;
             this.gBoxPrincipal.Text = "52 Semanas";
@@ -100,7 +100,7 @@
             // lblValorTotalDepositado
             // 
             this.lblValorTotalDepositado.AutoSize = true;
-            this.lblValorTotalDepositado.Location = new System.Drawing.Point(371, 320);
+            this.lblValorTotalDepositado.Location = new System.Drawing.Point(387, 535);
             this.lblValorTotalDepositado.Name = "lblValorTotalDepositado";
             this.lblValorTotalDepositado.Size = new System.Drawing.Size(30, 13);
             this.lblValorTotalDepositado.TabIndex = 6;
@@ -109,7 +109,7 @@
             // lblTotalDepositado
             // 
             this.lblTotalDepositado.AutoSize = true;
-            this.lblTotalDepositado.Location = new System.Drawing.Point(274, 320);
+            this.lblTotalDepositado.Location = new System.Drawing.Point(290, 535);
             this.lblTotalDepositado.Name = "lblTotalDepositado";
             this.lblTotalDepositado.Size = new System.Drawing.Size(91, 13);
             this.lblTotalDepositado.TabIndex = 5;
@@ -118,7 +118,7 @@
             // lblTotalValorEscolhido
             // 
             this.lblTotalValorEscolhido.AutoSize = true;
-            this.lblTotalValorEscolhido.Location = new System.Drawing.Point(101, 320);
+            this.lblTotalValorEscolhido.Location = new System.Drawing.Point(117, 535);
             this.lblTotalValorEscolhido.Name = "lblTotalValorEscolhido";
             this.lblTotalValorEscolhido.Size = new System.Drawing.Size(30, 13);
             this.lblTotalValorEscolhido.TabIndex = 4;
@@ -127,7 +127,7 @@
             // lblValorSelecionado
             // 
             this.lblValorSelecionado.AutoSize = true;
-            this.lblValorSelecionado.Location = new System.Drawing.Point(12, 320);
+            this.lblValorSelecionado.Location = new System.Drawing.Point(28, 535);
             this.lblValorSelecionado.Name = "lblValorSelecionado";
             this.lblValorSelecionado.Size = new System.Drawing.Size(83, 13);
             this.lblValorSelecionado.TabIndex = 3;
@@ -138,7 +138,7 @@
             this.groupBoxDetalhes.Controls.Add(this.listViewDetalhes);
             this.groupBoxDetalhes.Location = new System.Drawing.Point(9, 85);
             this.groupBoxDetalhes.Name = "groupBoxDetalhes";
-            this.groupBoxDetalhes.Size = new System.Drawing.Size(419, 218);
+            this.groupBoxDetalhes.Size = new System.Drawing.Size(451, 435);
             this.groupBoxDetalhes.TabIndex = 2;
             this.groupBoxDetalhes.TabStop = false;
             this.groupBoxDetalhes.Text = "Detalhes";
@@ -155,7 +155,7 @@
             this.listViewDetalhes.GridLines = true;
             this.listViewDetalhes.Location = new System.Drawing.Point(6, 25);
             this.listViewDetalhes.Name = "listViewDetalhes";
-            this.listViewDetalhes.Size = new System.Drawing.Size(407, 174);
+            this.listViewDetalhes.Size = new System.Drawing.Size(439, 404);
             this.listViewDetalhes.TabIndex = 2;
             this.listViewDetalhes.UseCompatibleStateImageBehavior = false;
             this.listViewDetalhes.View = System.Windows.Forms.View.Details;
@@ -164,22 +164,22 @@
             // columnHeaderSemana
             // 
             this.columnHeaderSemana.Text = "Semana";
-            this.columnHeaderSemana.Width = 79;
+            this.columnHeaderSemana.Width = 104;
             // 
             // columnHeaderValorDeposito
             // 
             this.columnHeaderValorDeposito.Text = "Depositar";
-            this.columnHeaderValorDeposito.Width = 122;
+            this.columnHeaderValorDeposito.Width = 126;
             // 
             // columnHeaderDeposito
             // 
             this.columnHeaderDeposito.Text = "Depositado ?";
-            this.columnHeaderDeposito.Width = 87;
+            this.columnHeaderDeposito.Width = 76;
             // 
             // columnHeaderSaldo
             // 
             this.columnHeaderSaldo.Text = "Saldo";
-            this.columnHeaderSaldo.Width = 114;
+            this.columnHeaderSaldo.Width = 126;
             // 
             // numericValor
             // 
@@ -208,7 +208,7 @@
             // 
             this.btnFechar.Image = ((System.Drawing.Image)(resources.GetObject("btnFechar.Image")));
             this.btnFechar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnFechar.Location = new System.Drawing.Point(302, 373);
+            this.btnFechar.Location = new System.Drawing.Point(316, 600);
             this.btnFechar.Name = "btnFechar";
             this.btnFechar.Size = new System.Drawing.Size(75, 23);
             this.btnFechar.TabIndex = 3;
@@ -222,7 +222,7 @@
             this.btnGravar.Enabled = false;
             this.btnGravar.Image = ((System.Drawing.Image)(resources.GetObject("btnGravar.Image")));
             this.btnGravar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnGravar.Location = new System.Drawing.Point(85, 373);
+            this.btnGravar.Location = new System.Drawing.Point(89, 600);
             this.btnGravar.Name = "btnGravar";
             this.btnGravar.Size = new System.Drawing.Size(75, 23);
             this.btnGravar.TabIndex = 4;
@@ -234,12 +234,14 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(466, 408);
+            this.ClientSize = new System.Drawing.Size(490, 635);
             this.Controls.Add(this.btnGravar);
             this.Controls.Add(this.btnFechar);
             this.Controls.Add(this.gBoxPrincipal);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Desafio 52 Semanas";
