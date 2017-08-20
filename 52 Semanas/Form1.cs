@@ -48,7 +48,7 @@ namespace _52_Semanas
                 {
                     valorAcumulado = valor + numericValor.Value;
                     colunas[1] = string.Format("R$ {0}", valorAcumulado.ToString());
-                    colunas[2] = "";
+                    colunas[2] = "Não";
                     colunas[3] = string.Format("R$ {0}", valorAcumulado.ToString());
                     valor = numericValor.Value;
                     linha = string.Join(", ", colunas);
@@ -57,7 +57,7 @@ namespace _52_Semanas
                 {
                     valor += numericValor.Value;
                     colunas[1] = string.Format("R$ {0}", valor.ToString());
-                    colunas[2] = "";
+                    colunas[2] = "Não";
                     valorAcumulado += valor;
                     colunas[3] = string.Format("R$ {0}", valorAcumulado);
                     linha = linha + (string.Format("{0}", System.Environment.NewLine) + string.Join(", ", colunas));
@@ -78,17 +78,23 @@ namespace _52_Semanas
 
         private void listViewDetalhes_MouseDoubleClick(object sender, MouseEventArgs e)
         {
-            MessageBox.Show("Deseja atualizar está linha ?", "Atualizar Depósito", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+            if(MessageBox.Show("Deseja atualizar está linha ?", "Atualizar Depósito", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
+            {              
+                
+            }
         }
 
         private void CriarTxt(string linha)
         {
             try
             {
-                StreamWriter wr = new StreamWriter(@"C:\Users\Emílio Andrade\Documents\Documentos\Emilio");
-                wr.Write(linha);
-                wr.Close();
-                wr.Dispose();
+                System.IO.StreamWriter file = new System.IO.StreamWriter(@"C:\Users\Emílio Andrade\Documents\Desenvolvimento\EmilioAndrade\52Semanas.txt");
+                file.WriteLine(linha);
+                file.Close();
+            }
+            catch (IOException)
+            {
+                MessageBox.Show("Erro ao criar o arquivo no diretório", "Erro ao Criar o Arquivo", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             catch (UnauthorizedAccessException)
             {
@@ -98,9 +104,11 @@ namespace _52_Semanas
             {
                 MessageBox.Show(string.Format("Ocorreu o erro: {0}", error), "Erro ao Criar o Arquivo", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-
         }
 
+        private void AtualizaDeposito()
+        {
 
+        }
     }
 }

@@ -45,6 +45,7 @@
             this.columnHeaderSaldo = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.numericValor = new System.Windows.Forms.NumericUpDown();
             this.btnFechar = new System.Windows.Forms.Button();
+            this.btnGravar = new System.Windows.Forms.Button();
             this.gBoxPrincipal.SuspendLayout();
             this.groupBoxDetalhes.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericValor)).BeginInit();
@@ -173,12 +174,12 @@
             // columnHeaderDeposito
             // 
             this.columnHeaderDeposito.Text = "Depositado ?";
-            this.columnHeaderDeposito.Width = 99;
+            this.columnHeaderDeposito.Width = 87;
             // 
             // columnHeaderSaldo
             // 
             this.columnHeaderSaldo.Text = "Saldo";
-            this.columnHeaderSaldo.Width = 103;
+            this.columnHeaderSaldo.Width = 114;
             // 
             // numericValor
             // 
@@ -207,7 +208,7 @@
             // 
             this.btnFechar.Image = ((System.Drawing.Image)(resources.GetObject("btnFechar.Image")));
             this.btnFechar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnFechar.Location = new System.Drawing.Point(192, 373);
+            this.btnFechar.Location = new System.Drawing.Point(302, 373);
             this.btnFechar.Name = "btnFechar";
             this.btnFechar.Size = new System.Drawing.Size(75, 23);
             this.btnFechar.TabIndex = 3;
@@ -216,11 +217,25 @@
             this.btnFechar.UseVisualStyleBackColor = true;
             this.btnFechar.Click += new System.EventHandler(this.btnFechar_Click);
             // 
+            // btnGravar
+            // 
+            this.btnGravar.Enabled = false;
+            this.btnGravar.Image = ((System.Drawing.Image)(resources.GetObject("btnGravar.Image")));
+            this.btnGravar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnGravar.Location = new System.Drawing.Point(85, 373);
+            this.btnGravar.Name = "btnGravar";
+            this.btnGravar.Size = new System.Drawing.Size(75, 23);
+            this.btnGravar.TabIndex = 4;
+            this.btnGravar.Text = "Gravar";
+            this.btnGravar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnGravar.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(466, 408);
+            this.Controls.Add(this.btnGravar);
             this.Controls.Add(this.btnFechar);
             this.Controls.Add(this.gBoxPrincipal);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
@@ -255,6 +270,7 @@
         private System.Windows.Forms.Button btnFechar;
         private System.Windows.Forms.Label lblGerarLista;
         private System.Windows.Forms.Button btnVisualizar;
+        private System.Windows.Forms.Button btnGravar;
     }
 }
 
